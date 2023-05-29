@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+    /* view wide view height 100vw 100vhはブラウザに合わせてぴったしになる */
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(136, 74, 165), rgb(192, 52, 74));
+    overflow: hidden;
+    /* position: absolute;の親として認識 */
+    position: relative;
+}
+
+nav {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    align-items: center;
+    font-weight: 550;
+    position: sticky;
+    z-index: 1;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links li {
+    list-style-type: none;
+    /* inlineにもblockにも取れる 便利屋さん */
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.nav-links ul a {
+    font-weight: 600;
+    color: #fff;
+    /* aタグ特有のアンダーライン消し */
+    text-decoration: none;
+    /* 0.3秒掛けてhover */
+    transition: 0.3s;
+}
+
+.nav-links ul a:hover {
+    color: rgb(231, 241, 156);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 20%;
+    height: 20%;
+    margin-right: 12px;
+}
+
+.information {
+    width: 1000px;
+    height: 1000px;
+
+    /* position: relative;を起点とする */
+    position: absolute;
+    top: 50%;
+    /* ブラウザは上方向がマイナス、下方向がプラス */
+    left: -10%;
+    transform: translateY(-50%);
+}
+
+#circle {
+    width: 1000px;
+    height: 1000px;
+    /* すごい使う */
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+
+    transition: 1s;
+}
+
+.feature {
+    position: absolute;
+    color: white;
+    display: flex;
+}
+
+.feature img {
+    width: 70px;
+}
+
+.feature div {
+    margin-left: 20px;
+}
+
+.feature div a {
+    margin-top: 8px;
+}
+
+.one {
+    top: 450px;
+    right: 70px;
+}
+
+.two {
+    top: 100px;
+    left: 340px;
+    transform: rotate(-90deg);
+}
+
+.three {
+    bottom: 450px;
+    left: 50px;
+    transform: rotate(-180deg);
+}
+
+.four {
+    bottom: 150px;
+    right: 370px;
+    transform: rotate(-270deg);
+}
+
+.pc {
+    width: 400px;
+    position: absolute;
+    /* このままだと画像のサイズ分下になる */
+    top: 50%;
+
+    /* 画像のサイズの50%分上に戻す */
+    transform: translateY(-50%);
+    left: 27%;
+    z-index: 1;
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.control img {
+    width: 15px;
+}
+
+.control h3 {
+    color: white;
+    margin: 20px 0;
+}
+
+#upBtn {
+    cursor: pointer;
+}
+
+#downBtn {
+    cursor: pointer;
+    transform: rotate(-180deg);
+}
+
+
+.overlay {
+    width: 0;
+    height: 0;
+    border-top: 520px solid white;
+    border-right: 520px solid transparent;
+    border-bottom: 520px solid white;
+    border-left: 520px solid white;
+}
